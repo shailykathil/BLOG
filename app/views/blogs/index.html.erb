@@ -1,0 +1,26 @@
+<h1>Listing blogs</h1>
+ <%= link_to 'New blog', new_blog_path %>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Image</th>
+     <th>Video</th>
+   <th colspan="5"></th>
+  </tr>
+ 
+  <% @blogs.each do |blog| %>
+    <tr>
+      <td><%= blog.title %></td>
+      <td><%= blog.description %></td>
+      <td><%= image_tag blog.image, :height=>"200", :width=>"200" %></td>
+      <td><%= video_tag blog.video, :controls=>true, :height=>"200", :width=>"400" %>
+      </td>
+      <td><%= link_to 'Show', blog_path(blog) %></td>
+      <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
+      <td><%= link_to 'Destroy', blog_path(blog),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+     </tr>
+  <% end %>
+</table>

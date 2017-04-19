@@ -1,0 +1,25 @@
+<p>
+  <strong>Title:</strong>
+  <%= @blog.title %>
+</p>
+ 
+<p>
+  <strong>Description:</strong>
+  <%= @blog.description %>
+</p>
+<p>
+  <strong>Image:</strong>
+  <%= image_tag @blog.image, :height=>"200", :width=>"200" %>
+</p>
+<p>
+  <strong>Video:</strong>
+  <%= video_tag @blog.video, :controls=>true, :height=>"200", :width=>"400" %>
+</p>
+<h2>Comments</h2>
+<%= render 'comments/comments' %>
+ 
+<h2>Add a comment:</h2>
+<%= render 'comments/form' %>
+ 
+<%= link_to 'Edit', edit_blog_path(@blog) %> |
+<%= link_to 'Back', blogs_path %>
