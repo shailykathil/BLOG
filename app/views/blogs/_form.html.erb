@@ -25,11 +25,15 @@
   </p>
  <p>
     <%= f.label :image %><br>
-    <%= f.file_field :image%>
+    <%= f.file_field :image, :multiple=>true%>
   </p>
   <p>
     <%= f.label :video %><br>
     <%= f.file_field :video%>
+  </p>
+  <p>
+    <%= f.select(:category_id, Category.all.collect {|u| [u.name, u.id]}, :prompt => 'Select Category') %>
+    
   </p>
   <p>
     <%= f.submit %>

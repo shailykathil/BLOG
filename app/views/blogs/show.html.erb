@@ -9,7 +9,9 @@
 </p>
 <p>
   <strong>Image:</strong>
-  <%= image_tag @blog.image, :height=>"200", :width=>"200" %>
+  <%@blog.images.each do |image|%>
+  <%= image_tag image.image, :height=>"200", :width=>"200" %>
+  <%end%>
 </p>
 <p>
   <strong>Video:</strong>

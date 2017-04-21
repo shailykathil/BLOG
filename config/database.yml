@@ -11,3 +11,11 @@ development:
   pool: 5
   username: root
   password: root
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: home_db
+  pool: 5
+  username: root
+  password: root
