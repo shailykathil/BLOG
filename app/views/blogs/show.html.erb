@@ -17,9 +17,10 @@
   <strong>Video:</strong>
   <%= video_tag @blog.video, :controls=>true, :height=>"200", :width=>"400" %>
 </p>
+<div class="comments-container">
 <h2>Comments</h2>
 <%= render 'comments/comments' %>
- 
+ </div>
 <h2>Add a comment:</h2>
 <%= render 'comments/form' %>
  
